@@ -1,6 +1,7 @@
 package interfaces;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Interface defining standard operations for ticket sales management.
@@ -72,4 +73,16 @@ public interface TicketSalesInfo {
      * @return returns last update timestamp as string
      */
     String GetLastUpdated(String ShowID);
+
+        /**
+     * Retrieves historical sales trends based on parameters.
+     * Implementations should analyze the provided sales data and return meaningful trends.
+     *
+     * @param startDate Start date of the trend analysis.
+     * @param endDate End date of the trend analysis.
+     * @param analysisType Type of analysis (e.g., "revenue", "ticket_count").
+     * @param frequency Frequency of the analysis (e.g., "daily", "monthly").
+     * @return List of analyzed sales trends as strings.
+     */
+    List<String> GetSalesTrends(LocalDateTime startDate, LocalDateTime endDate, String analysisType, String frequency);
 }

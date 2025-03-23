@@ -3,6 +3,8 @@ package abstractClasses;
 import interfaces.TicketSalesInfo;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Abstract class that implements TicketSalesInfo interface to handle ticket sales data.
@@ -38,6 +40,10 @@ public abstract class AbstractTicketSalesInfo implements TicketSalesInfo {
     // Timestamp of last modification in string format
     private String lastUpdated;
 
+    // List of sales trends for the event
+    private List<String> salesTrends;
+
+
     /**
      * Constructor to initialize ticket sales information.
      *
@@ -50,6 +56,7 @@ public abstract class AbstractTicketSalesInfo implements TicketSalesInfo {
      * @param groupBookings   Number of group bookings.
      * @param TicketInfo      Ticket information in CSV format.
      * @param lastUpdated     Last update timestamp.
+     * @param salesTrends     List of sales trends for the event.
      */
     public AbstractTicketSalesInfo(int eventID, int eventName, int ticketID,
                                    String showName, int totalTicketsSold, double totalRevenue,
@@ -63,6 +70,7 @@ public abstract class AbstractTicketSalesInfo implements TicketSalesInfo {
         this.groupBookings = groupBookings;
         this.TicketInfo = TicketInfo;
         this.lastUpdated = lastUpdated;
+        this.salesTrends = new ArrayList<>();
     }
 
 
@@ -157,5 +165,23 @@ public abstract class AbstractTicketSalesInfo implements TicketSalesInfo {
         return lastUpdated;
     }
 
+        /**
+     * Placeholder method for retrieving historical sales trends.
+     * This method currently returns a simple placeholder string instead of performing actual analysis.
+     * In a real implementation, trend analysis should be computed based on the input parameters.
+     *
+     * @param startDate Start date of the trend analysis
+     * @param endDate End date of the trend analysis
+     * @param analysisType Type of analysis (e.g., "revenue", "ticket_count")
+     * @param frequency Frequency of the analysis (e.g., "daily", "monthly")
+     * @return List of sales trends formatted as strings
+     */
+    
+    @Override
+    public List<String> GetSalesTrends(LocalDateTime startDate, LocalDateTime endDate, String analysisType, String frequency) {
+        // Placeholder logic for trend analysis
+        salesTrends.add("Trend Analysis from " + startDate + " to " + endDate + " for " + analysisType + " with " + frequency + " frequency.");
+        return salesTrends;
+    }
 
 }
