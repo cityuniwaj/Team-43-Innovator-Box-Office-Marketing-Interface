@@ -60,6 +60,7 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
         this.eventID = eventID;
         this.totalSeats = totalSeats;
         this.seatsAvailable = totalSeats; // Default: all seats available
+        this.reservedSeats = ""; // Default: no reserved seats
         this.restrictedViewSeats = new ArrayList<>();
         this.wheelchairSeats = new ArrayList<>();
         this.accessibilityChanges = "No accessibility changes";
@@ -71,6 +72,7 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
      * Gets the venue ID.
      * @return Venue ID as a string
      */
+    @Override
     public String getVenueID() {
         return venueID;
     }
@@ -79,6 +81,7 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
      * Gets the event ID.
      * @return Event ID as an integer
      */
+    @Override
     public int getEventID() {
         return eventID;
     }
@@ -87,6 +90,7 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
      * Gets the total number of seats in the venue.
      * @return Total seats count
      */
+    @Override
     public int getTotalSeats() {
         return totalSeats;
     }
@@ -95,6 +99,7 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
      * Gets the number of available seats.
      * @return Available seats count
      */
+    @Override
     public int getSeatsAvailable() {
         return seatsAvailable;
     }
@@ -103,6 +108,7 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
      * Gets the seat hold expiration time.
      * @return Expiration time as LocalDateTime
      */
+    @Override
     public LocalDateTime getSeatHoldExpiration() {
         return seatHoldExpiration;
     }
@@ -111,6 +117,7 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
      * Gets the list of restricted view seats.
      * @return List of restricted view seats
      */
+    @Override
     public List<String> getRestrictedViewSeats() {
         return restrictedViewSeats;
     }
@@ -119,6 +126,7 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
      * Gets the list of wheelchair-accessible seats.
      * @return List of wheelchair-accessible seats
      */
+    @Override
     public List<String> getWheelchairSeats() {
         return wheelchairSeats;
     }
@@ -127,6 +135,7 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
      * Gets the accessibility changes made to the seating configuration.
      * @return Accessibility changes as a string
      */
+    @Override
     public String getAccessibilityChanges() {
         return accessibilityChanges;
     }
@@ -135,6 +144,7 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
      * Gets the last updated timestamp of the seating configuration.
      * @return Last updated time as LocalDateTime
      */
+    @Override
     public LocalDateTime getLastUpdated() {
         return lastUpdated;
     }
@@ -143,6 +153,7 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
      * Gets the event room ID information.
      * @return Event room ID as a string
      */
+    @Override
     public String getEventRoomIDInfo() {
         return eventRoomIDInfo;
     }
@@ -151,8 +162,18 @@ public abstract class AbstractSeatingConfiguration implements SeatingConfigurati
      * Gets the seating configuration details.
      * @return Seating configuration as a string
      */
+    @Override
     public String getSeatingConfig() {
         return seatingConfig;
+    }
+
+    /**
+     * Retrieves reserved seats information.
+     * @return Reserved seats as a string.
+     */
+    @Override
+    public String getReservedSeats() {
+        return reservedSeats;
     }
 }
 

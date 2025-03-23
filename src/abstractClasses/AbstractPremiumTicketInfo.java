@@ -1,12 +1,14 @@
 package abstractClasses;
 
+import interfaces.PremiumTicketInfo;
+
 import java.time.LocalDateTime;
 
 /**
  * Abstract class that provides a base structure for premium ticket information.
  * Defines common properties for premium seating including reservation details.
  */
-public abstract class AbstractPremiumTicketInfo {
+public abstract class AbstractPremiumTicketInfo implements PremiumTicketInfo {
 
     // Unique identifier for each premium seat.
     private String seatId;
@@ -41,6 +43,7 @@ public abstract class AbstractPremiumTicketInfo {
      * Gets the seat ID.
      * @return Seat ID as a string.
      */
+    @Override
     public String getSeatId() {
         return seatId;
     }
@@ -49,6 +52,7 @@ public abstract class AbstractPremiumTicketInfo {
      * Checks if the seat is premium.
      * @return True if premium, otherwise false.
      */
+    @Override
     public boolean isPremium() {
         return isPremium;
     }
@@ -57,6 +61,7 @@ public abstract class AbstractPremiumTicketInfo {
      * Checks if the seat is reserved for FOL members.
      * @return True if reserved for FOL, otherwise false.
      */
+    @Override
     public boolean isReservedForFOL() {
         return reservedForFOL;
     }
@@ -65,6 +70,7 @@ public abstract class AbstractPremiumTicketInfo {
      * Gets the reservation deadline for unclaimed premium seats.
      * @return Reserved deadline as LocalDateTime.
      */
+    @Override
     public LocalDateTime getReservedDeadline() {
         return reservedDeadline;
     }

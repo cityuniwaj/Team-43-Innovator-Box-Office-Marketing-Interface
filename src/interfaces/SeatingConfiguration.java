@@ -69,4 +69,16 @@ public interface SeatingConfiguration {
      * @return Event room ID as a string.
      */
     String getEventRoomIDInfo();
+    
+        /**
+     * Retrieves the expiration time for a seat hold.
+     * @return The expiration time as a LocalDateTime object.
+     */
+    LocalDateTime getSeatHoldExpiration();
+
+    /**
+     * Retrieves the reserved seats as a formatted string.
+     * @return A string representing the reserved seats.
+     */
+    String getReservedSeats();
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Team-43-Innovator-Box-Office-Marketing-Interface.iml" filepath="$PROJECT_DIR$/.idea/Team-43-Innovator-Box-Office-Marketing-Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MarketingInterfaces.iml" filepath="$PROJECT_DIR$/MarketingInterfaces.iml" />
     </modules>
   </component>
 </project>

@@ -16,4 +16,3 @@ This system is designed to manage event ticket sales, seating configurations, an
 
 Thank you for reviewing this document! If you have any questions or require further clarification, please do not hesitate to contact us.
 
-Note: This code is to be run with Intellij IDEA, so there is a chance it will not work as intended with other IDEs

@@ -16,65 +16,58 @@ public interface TicketSalesInfo {
      * @param EventID unique identifier for each event
      * @return returns event information as CSV string
      */
-    int GetEventInfo(String EventID);
+    int getEventInfo(String EventID);
 
     /**
      * Retrieves event name based on event name identifier
      * @param EventNameID unique identifier for event name
      * @return returns event name information as CSV string
      */
-    int GetEventName(String EventNameID);
+    int getEventName(String EventNameID);
 
     /**
      * Retrieves ticket details for a specific ticket
      * @param TicketID unique identifier for each ticket
      * @return returns ticket identifier information as CSV string
      */
-    int GetTicketID(String TicketID);
-
-    /**
-     * Retrieves show name information for a specific show
-     * @param ShowID unique identifier for each show
-     * @return returns show name as CSV string
-     */
-    String GetShowName(String ShowID);
+    int getTicketID(String TicketID);
 
     /**
      * Retrieves total number of tickets sold for a show
-     * @param ShowID unique identifier for each show
+     * @param EventID unique identifier for each show
      * @return returns total ticket count as integer
      */
-    int GetTotalTicketsSold(String ShowID);
+    int getTotalTicketsSold(String EventID);
 
     /**
      * Calculates and retrieves total revenue for a specific show
-     * @param ShowID unique identifier for each show
+     * @param EventID unique identifier for each show
      * @return returns total revenue as double
      */
-    double GetTotalRevenue(String ShowID);
+    double getTotalRevenue(String EventID);
 
     /**
      * Retrieves number of group bookings for a show
-     * @param ShowID unique identifier for each show
+     * @param EventID unique identifier for each show
      * @return returns group booking count as integer
      */
-    int GetGroupBookings(String ShowID);
+    int getGroupBookings(String EventID);
 
     /**
      * Retrieves detailed ticket information
      * @param TicketID unique identifier for each ticket
      * @return returns detailed ticket information as CSV string
      */
-    String GetTicketInfo(String TicketID);
+    String getTicketInfo(String TicketID);
 
     /**
      * Retrieves last update timestamp for show information
-     * @param ShowID unique identifier for each show
+     * @param EventID unique identifier for each show
      * @return returns last update timestamp as string
      */
-    String GetLastUpdated(String ShowID);
+    String getLastUpdated(String EventID);
 
-        /**
+    /**
      * Retrieves historical sales trends based on parameters.
      * Implementations should analyze the provided sales data and return meaningful trends.
      *
@@ -84,5 +77,5 @@ public interface TicketSalesInfo {
      * @param frequency Frequency of the analysis (e.g., "daily", "monthly").
      * @return List of analyzed sales trends as strings.
      */
-    List<String> GetSalesTrends(LocalDateTime startDate, LocalDateTime endDate, String analysisType, String frequency);
+    List<String> getSalesTrends(LocalDateTime startDate, LocalDateTime endDate, String analysisType, String frequency);
 }
